@@ -1,0 +1,11 @@
+.section {
+  padding: 40px 0;
+  &__title {
+    h1 {
+      font-size: 30px;
+      text-align: center;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+}

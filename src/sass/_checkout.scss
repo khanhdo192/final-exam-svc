@@ -1,0 +1,49 @@
+.checkout {
+  &__container {
+    padding: 50px 0px;
+  }
+  &__title {
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  &__form,
+  &__card {
+    background-color: #fff;
+    padding: 30px;
+    padding-top: 50px;
+    border-radius: 16px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 20px;
+  }
+  &__cart-order {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    p {
+      font-size: 20px;
+      font-weight: 500;
+      color: #333;
+      margin: 0;
+    }
+  }
+}
+
+.form-checkout {
+  min-height: 100px;
+  label {
+    font-size: 16px;
+    color: #333;
+    padding-left: 4px;
+    font-weight: 500;
+  }
+  .text-danger {
+    padding: 4px 0px 0px 4px;
+    font-weight: 500;
+  }
+}

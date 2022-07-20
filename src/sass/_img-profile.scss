@@ -1,0 +1,77 @@
+.avatar-wrapper {
+  position: relative;
+  height: 130px;
+  width: 130px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 15px -5px black;
+  transition: all 0.3s ease;
+  padding: 0;
+  @include mobile {
+    height: 90px;
+    width: 90px;
+  }
+  &:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  &:hover .profile-pic {
+    opacity: 0.5;
+  }
+
+  .profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s ease;
+    object-fit: cover;
+    &:after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      font-size: 190px;
+      background: #ecf0f1;
+      color: #34495e;
+      text-align: center;
+    }
+  }
+
+  .upload-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    .fa-arrow-circle-up {
+      align-items: center;
+      position: absolute;
+      font-size: 50px;
+      top: 40px;
+      left: 40px;
+      opacity: 0;
+      transition: all 0.3s ease;
+      color: #34495e;
+    }
+
+    &:hover .fa-arrow-circle-up {
+      opacity: 0.9;
+      @include mobile {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.alert-file-validation {
+  color: red;
+  margin-top: 5px;
+  text-align: center;
+  @include mobile {
+    margin-bottom: -5px;
+    font-size: small;
+  }
+}

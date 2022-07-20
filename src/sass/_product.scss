@@ -1,0 +1,230 @@
+.product {
+  @include flex(flex-start, flex-start);
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &__images {
+    @include flex(flex-start, flex-start);
+    width: 60%;
+    flex-wrap: wrap;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &__list {
+      width: 20%;
+
+      &__item {
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    }
+
+    &__main {
+      margin: 0px 2rem;
+      flex-grow: 1;
+      padding-top: 100%;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+    position: sticky;
+    top: 110px;
+    padding: 0 20px;
+
+    @include mobile {
+      position: relative;
+      top: unset;
+    }
+
+    &__desc {
+      padding-top: 70px;
+      p {
+        font-size: 14px;
+        color: #333;
+        margin: 0;
+      }
+    }
+
+    &__title {
+      font-size: 2.5rem;
+      font-weight: normal;
+    }
+
+    &__capacity {
+      border: 2px solid #333;
+      padding: 10px 20px;
+      margin-right: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+      color: #333;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      &:hover {
+        background-color: $main-color;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-color: #fff;
+      }
+      &.active {
+        background-color: $main-color;
+        color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-color: #fff;
+      }
+    }
+
+    &__item {
+      margin-top: 2rem;
+
+      &__price {
+        color: $main-color;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      &__list {
+        @include flex(center, flex-start);
+
+        &__item {
+          @include flex(center, center);
+
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 2px solid #333;
+          cursor: pointer;
+          margin-right: 1rem;
+
+          @include mobile {
+            width: 40px;
+            height: 40px;
+          }
+
+          &.active {
+            border-color: $main-color;
+            box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+              rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+          }
+
+          &:hover {
+            border-color: $main-color;
+          }
+
+          .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+            @include mobile {
+              width: 30px;
+              height: 30px;
+            }
+          }
+
+          &__size {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+      &__quantity {
+        @include flex(flex-start, flex-start);
+        .select-quantity {
+          border: 2px solid #333;
+          border-radius: 8px;
+        }
+
+        &__btn {
+          @include flex(center, center);
+          width: 30px;
+          height: 30px;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        &__input {
+          @include flex(center, center);
+          height: 30px;
+          width: 90px;
+          font-size: 1.5rem;
+          border-left: 2px solid #333;
+          border-right: 2px solid #333;
+        }
+      }
+
+      button {
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.product-description {
+  width: 100%;
+  padding: 2rem 2rem 3rem;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+
+  @include mobile {
+    display: none;
+  }
+
+  &.mobile {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &.expand {
+    height: max-content;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0;
+  }
+
+  &__content {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+    text-align: justify;
+  }
+
+  &__toggle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

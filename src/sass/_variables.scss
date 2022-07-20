@@ -1,0 +1,37 @@
+$main-bg: #fff;
+$main-color: #1c1c1c;
+
+$txt-main-color: #333;
+$txt-second-color: #82b7dc;
+$txt-white: #fff;
+$txt-link: #f1f1f1;
+$txt-link-active: #114084;
+
+$btn-main-bg: $main-color;
+$btn-main-color: #f1f1f1;
+
+$header-height: 70px;
+$header-tablet-height: 70px;
+$header-mobile-height: 60px;
+$header-shrink-height: 70px;
+
+$box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+$colors: (
+  'blue': #4267b2,
+  'orange': #fbb96b,
+  'pink': #fe7e73,
+  'white': #fff,
+  'black': #000,
+  'red': #ff0000,
+  'yellow': #ffff00,
+  'green': green,
+  'main': $main-color,
+);
+
+$mobile-width: 480px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$tablet-width: 1200px;
+
+$numbers: (0, 1, 2, 3, 4, 5, 6, 7, 8);

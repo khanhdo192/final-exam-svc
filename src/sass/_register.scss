@@ -1,0 +1,45 @@
+.register-form {
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 30px;
+  width: 100%;
+  background: #fff;
+  padding: 27px 34px 28px 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  .form-group-register {
+    min-height: 73px;
+    margin-bottom: auto;
+  }
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .form-check {
+    padding-left: 1.7rem;
+    min-height: 45px;
+  }
+  .link-login {
+    padding-top: 5px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      color: blue;
+    }
+    .login {
+      color: black;
+      font-weight: bold;
+    }
+  }
+  .btn {
+    font-size: 15px;
+    background-color: black;
+    color: #fff;
+    border-radius: 14px;
+  }
+}

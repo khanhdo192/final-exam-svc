@@ -1,0 +1,54 @@
+.form-group {
+  // min-height: 95px;
+  margin-bottom: auto;
+}
+.login-form {
+  max-width: 350px;
+  margin: auto;
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 34px 34px 28px 34px;
+  border-radius: 6px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+  h2 {
+    font-weight: bold;
+    text-align: center;
+  }
+  .forget-link {
+    padding-bottom: 10px;
+    text-align: right;
+    a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #05a;
+    }
+    a:hover {
+      color: blue;
+    }
+  }
+
+  .register-link {
+    color: #2e2d2d;
+    font-size: 14px;
+    text-align: center;
+    a {
+      color: #05a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      color: blue;
+    }
+    margin-top: 8px;
+  }
+  .form-group {
+    .btn {
+      font-size: 15px;
+      width: 100%;
+    }
+    .btn:hover {
+      background-color: #05a;
+    }
+  }
+}

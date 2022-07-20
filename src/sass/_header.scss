@@ -1,0 +1,187 @@
+.header {
+  background-color: $main-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  height: $header-height;
+  transition: height 0.3s ease;
+  display: flex;
+  align-items: center;
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 2s;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    color: #000;
+  }
+
+  .profile ul {
+    background-color: #fff;
+    border-radius: 10px;
+    right: 50px;
+    position: absolute;
+    padding: 8px;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+    width: 150px;
+    box-shadow: $box-shadow;
+  }
+
+  .profile ul::before {
+    position: absolute;
+    background-color: #fff;
+    height: 10px;
+    width: 10px;
+    top: -5px;
+  }
+
+  .profile ul li {
+    list-style: none;
+    text-align: left;
+    font-size: 15px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+
+  .profile ul li:hover {
+    background-color: #eee;
+  }
+
+  .profile ul li i {
+    margin-right: 7px;
+    font-weight: bold;
+  }
+
+  @include tablet {
+    height: $header-tablet-height;
+    box-shadow: $box-shadow;
+  }
+  @include mobile {
+    height: $header-mobile-height;
+  }
+  &.shrink {
+    height: $header-shrink-height;
+    box-shadow: $box-shadow;
+    z-index: 100;
+
+    @include mobile {
+      height: $header-mobile-height;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__menu {
+    @include flex(center, space-between);
+    font-size: 18px;
+    font-weight: 500;
+    color: $txt-link;
+    &__item {
+      padding-right: 30px;
+      @include largeScreen {
+        padding-right: 5px;
+      }
+      @include mobile {
+        padding-right: 0;
+      }
+    }
+    &__item.active {
+      color: $txt-link-active;
+    }
+    &__item:hover {
+      color: $txt-second-color;
+    }
+    &__left,
+    &__right {
+      @include flex(center, center);
+    }
+    &__right {
+      font-size: 2.25rem;
+      &__item {
+        font-size: 25px;
+        @include flex(center, center);
+        @include largeScreen {
+          margin-left: 10px;
+        }
+      }
+      @include mobile {
+        font-size: 1.5rem;
+      }
+      .total-cart-item {
+        top: 0;
+        right: -7px;
+        font-size: 10px;
+        background-color: #333;
+        color: #fff;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &__left {
+      &__close {
+        display: none;
+      }
+      @include largeScreen {
+        flex-direction: column;
+        background-color: #808080;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 320px;
+        height: 100vh;
+        justify-content: flex-start;
+        padding: 70px 0px 30px;
+        transform: translateX(-100%);
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+        &.active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        &__item {
+          padding: 0px 20px 20px;
+        }
+        &__close {
+          display: block;
+          cursor: pointer;
+          position: absolute;
+          top: 7px;
+          left: 20px;
+          font-size: 40px;
+        }
+      }
+    }
+    &__mobile-toggle {
+      display: none;
+      cursor: pointer;
+      @include largeScreen {
+        display: block;
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

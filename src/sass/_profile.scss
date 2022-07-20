@@ -1,0 +1,45 @@
+.profile-container {
+  padding: 50px 0;
+  .checkout__form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    @include mobile {
+      margin: 10px 10px 50px 5px;
+    }
+    h2 {
+      text-align: center;
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+    label {
+      @include mobile {
+        font-size: 13px;
+      }
+    }
+    .title {
+      .title-info {
+        text-align: left;
+        font-size: 20px;
+        margin-left: 15px;
+
+        @include mobile {
+          font-size: medium;
+          text-align: center;
+        }
+      }
+    }
+    .form-information {
+      .form-input {
+        border-radius: 16px;
+        @include mobile {
+          font-size: small;
+        }
+      }
+    }
+  }
+}

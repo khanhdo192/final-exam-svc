@@ -1,0 +1,96 @@
+.catalog {
+  @include flex(flex-start, flex-start);
+  padding: 50px 0 0;
+
+  @include tablet {
+    flex-direction: column;
+  }
+
+  &__filter {
+    width: 25%;
+    border-radius: 14px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 20px;
+
+    @include tablet {
+      width: max-content;
+      height: 100vh;
+      background-color: $main-bg;
+      padding: 1rem;
+      position: fixed;
+      left: 0;
+      top: $header-tablet-height;
+      z-index: 100;
+      box-shadow: $box-shadow;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+
+    @include mobile {
+      top: $header-mobile-height;
+    }
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    &__widget {
+      margin-bottom: 2rem;
+
+      &__title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 16px;
+      }
+
+      &__content {
+        color: #333;
+
+        &__item {
+          margin-bottom: 13px;
+        }
+        &__search {
+          position: relative;
+          i {
+            cursor: pointer;
+            font-size: 25px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+
+    &__close {
+      display: none;
+      @include tablet {
+        display: block;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 20px;
+
+    @include tablet {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__filter__toggle {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: 100px;
+      padding-bottom: 20px;
+    }
+  }
+}

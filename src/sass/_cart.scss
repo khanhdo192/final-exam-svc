@@ -1,0 +1,183 @@
+.cart {
+  @include flex(flex-start, flex-start);
+  margin-bottom: 80px;
+
+  @include tablet {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__noti {
+    width: 400px;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+
+    @include mobile {
+      width: 100%;
+      margin-top: 0px;
+      padding: 0px;
+    }
+
+    &__image {
+      img {
+        height: 9rem;
+      }
+    }
+
+    & > * {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: $main-color;
+      text-align: center;
+      text-decoration: none;
+      &:hover {
+        color: #ed4b4b;
+      }
+    }
+
+    p {
+      font-size: 1.75rem;
+    }
+    p:nth-child(2) {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+
+  &__list {
+    width: 60%;
+    padding: 20px;
+    margin: 30px 30px 0;
+    box-shadow: $box-shadow;
+    border-radius: 16px;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include mediumScreen {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    width: 40%;
+    padding: 30px;
+    margin: 30px 30px 0;
+    box-shadow: $box-shadow;
+    border-radius: 16px;
+
+    @include tablet {
+      width: 80%;
+    }
+
+    @include mediumScreen {
+      width: 100%;
+    }
+
+    &__txt {
+      & > * {
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      &__price {
+        @include flex(center, space-between);
+        padding: 10px 0;
+        font-size: 1.25rem;
+
+        p:nth-child(2) {
+          font-size: 2rem;
+          color: $main-color;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__btn {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    @include flex(center, flex-start);
+    margin: 30px 30px 20px 30px;
+
+    &__image {
+      width: 100px;
+      height: 100px;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      @include flex(center, space-between);
+      flex: 1;
+      padding-left: 20px;
+      gap: 15px;
+
+      @include mediumScreen {
+        flex-direction: column;
+      }
+
+      @include mobile {
+        @include flex(flex-start, center);
+        flex-direction: column;
+
+        & > * {
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        text-transform: capitalize;
+      }
+
+      &__name {
+        width: 40%;
+        @include mediumScreen {
+          text-align: center;
+        }
+        @include mobile {
+          width: 100%;
+          text-align: left;
+        }
+      }
+      &__name,
+      &__price,
+      &__total--price {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__del {
+      font-size: 1.5rem;
+
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: #ed4b4b;
+        }
+      }
+    }
+  }
+}
+.product__info__item__quantity__input {
+  width: 40px;
+}
