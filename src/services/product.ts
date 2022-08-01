@@ -14,3 +14,13 @@ export function catalogproduct(): Promise<any> {
 export function productdetail(params: string | undefined): Promise<any> {
   return Instance.get(`api/ProductCatalog/${params}`);
 }
+export function searchproduct(
+  sortByName: string,
+  sortByPrice: string,
+  keyword: string,
+  page: number,
+): Promise<any> {
+  return Instance.get(
+    `api/ListProduct?CategoryID=1&SortName=${sortByName}&SortPrice=${sortByPrice}&Search=${keyword}&PageIndex=${page}`,
+  );
+}

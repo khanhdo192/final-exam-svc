@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { logoutSuccess } from '../../store/slices/authSlice';
 import { clearCart, setCart } from '../../store/slices/cartItemsSlice';
 import { clearProfile } from '../../store/slices/profileSlice';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 const mainNav = [
   {
@@ -33,14 +34,19 @@ const Header = () => {
     setTotalProducts(currentCart?.length);
   }, [currentCart]);
 
-  const menuLeft = useRef<HTMLInputElement>(null);
-  const menuToggle = () => menuLeft.current?.classList.toggle('active');
+  const menuRef = useRef<HTMLInputElement>(null);
+
+  const clickOutsidehandler = () => {
+    menuRef.current?.classList.remove('active');
+  };
+  useOnClickOutside(menuRef, clickOutsidehandler);
 
   const handleLogout = () => {
     dispatch(logoutSuccess());
     dispatch(clearProfile());
     dispatch(clearCart());
     localStorage.removeItem('accessToken');
+    localStorage.removeItem('accessTokenVendor');
     toast.info('You are now logged out');
   };
 
@@ -54,11 +60,21 @@ const Header = () => {
             </Link>
           </div>
           <div className="header__menu">
-            <div className="header__menu__mobile-toggle" onClick={menuToggle}>
+            <div
+              className="header__menu__mobile-toggle"
+              onClick={() => {
+                menuRef.current?.classList.toggle('active');
+              }}
+            >
               <i className="bx bx-menu-alt-left" />
             </div>
-            <div className="header__menu__left" ref={menuLeft}>
-              <div className="header__menu__left__close" onClick={menuToggle}>
+            <div className="header__menu__left" ref={menuRef}>
+              <div
+                className="header__menu__left__close"
+                onClick={() => {
+                  menuRef.current?.classList.toggle('active');
+                }}
+              >
                 <i className="bx bx-x" />
               </div>
               {mainNav.map((item, index) => (
@@ -86,6 +102,17 @@ const Header = () => {
                   </Link>
                 </div>
               )}
+              {/* {isLogged ? (
+                <div className="header__menu__item header__menu__left__item">
+                  <Link to="/vendor"><span>Vendor</span></Link>
+                </div>
+              ) : (
+                <div className="header__menu__item header__menu__left__item">
+                  <Link to="/login-vendor">
+                    <span>Vendor Signs</span>
+                  </Link>
+                </div>
+              )} */}
             </div>
             <div className="header__menu__right">
               <div className="header__menu__item header__menu__right__item">

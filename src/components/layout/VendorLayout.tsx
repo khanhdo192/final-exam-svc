@@ -1,12 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Container from '../common/Container';
+import Header from '../header/Header';
 
 const VendorLayout = () => {
   return (
-    <Container>
-      <Outlet />
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Outlet />
+      </Container>
+    </>
   );
 };
 
