@@ -10,6 +10,7 @@ const Instance = Axios.create({
     Accept: 'application/json',
     'Content-Type': 'application/json',
     charset: 'utf-8',
+    'Access-Control-Allow-Credentials': true,
   },
 
   paramsSerializer(params: { [x: string]: any }) {
